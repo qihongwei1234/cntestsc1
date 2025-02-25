@@ -69,6 +69,10 @@
             color: #1a1a1a;
         }
 
+        .report-container {
+            text-align: left; /* 左对齐 */
+        }
+        
         /* 测试题卡片样式 */
         .card {
             display: flex;
@@ -2871,7 +2875,7 @@ function endComprehensiveTest() {
     }
 
     // 生成报告 HTML
-    let reportHTML = `<h2>测试报告</h2>`;
+    let reportHTML = `<div class="report-container">`; // 添加左对齐容器
     
     // 总体表现评价
     if (totalAccuracy >= 90) {
@@ -2917,6 +2921,8 @@ function endComprehensiveTest() {
     reportHTML += `<p>亲爱的孩子，你已经具备了 ${recommendedGrade} 的识字量，是时候开始中文的阅读之旅了！在中文的阅读中感受文字之美，探索知识的海洋。</p>`;
     reportHTML += `<p>以下是为你精心挑选的 3 本适合 ${recommendedGrade} 的书籍：</p>`;
     reportHTML += `<ul>${getRandomBooks(recommendedGrade)}</ul>`;
+
+    reportHTML += `</div>`; // 关闭左对齐容器
 
     // 添加按钮容器
     reportHTML += `
